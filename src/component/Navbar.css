@@ -1,0 +1,31 @@
+/* navbar styles */
+nav{
+  background: #292929;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+nav img{
+  width: 192px;
+  padding-left: 77px;
+}
+@media (max-width: 834px) {
+  nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav img{
+    padding-left: 0;
+  }
+}
+@media (max-width: 320px) {
+  nav{
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  nav img{
+    width: 87.68px;
+    height: 18.43px;
+  }
+}
