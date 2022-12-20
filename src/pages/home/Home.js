@@ -1,6 +1,7 @@
 // Style  
 import axios from "axios"
 import { useEffect, useState } from "react"
+import Search from "../../component/search"
 import Slider from "../../component/slider"
 import  "./Home.css"
 
@@ -57,8 +58,6 @@ export default function Home() {
   },[searchTerm])
 
 
-  movieData && console.log( movieData)
-  seriesData &&console.log( seriesData)
 
 
   return (
@@ -66,26 +65,17 @@ export default function Home() {
       <div className="section1">
         <h1>Watch something incredible.</h1>
       </div>
-      <div className="search">
-        <label className="search-label">
-          <span className="search-span">Search</span>
-          <input 
-            type='text'
-            value={searchTerm}
-            onChange={(e)=>setSearchTerm(e.target.value)}
-           />
-        </label>
-      </div>
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="movie-container">
         <div className="movies">
-          <p>Movies</p>
+          <p className="category-title">Movies</p>
           <div className="clip">
             {movieError && <p className="error">{movieError}</p>}
             {movieData !== null ? (movieLoading ? <p className="loading">Loading...</p> : movieData.Search !== null && movieData.Search.map((movie) => <Slider key={movie.imdbID} poster={movie.Poster} title={movie.Title}  />)): <p className="error">Search movie Name</p>}
           </div>
         </div>
         <div className="movies">
-          <p>Series</p>
+          <p className="category-title">Series</p>
           <div className="clip">
             {seriesError && <p className="error">{seriesError}</p>}
             {seriesData !== null ? (seriesLoading ? <p className="loading">Loading...</p> : seriesData.Search !== null && seriesData.Search.map((movie, index) => <Slider key={movie.imdbID} poster={movie.Poster} title={movie.Title}  />)) : <p className="error">Search movie Name</p> }

@@ -21,6 +21,10 @@
 }
 .search-span{
   display: block;
+  font-size: 24px;
+}
+.category-title{
+  font-size: 24px;
 }
 .search{
   width:  calc(100% - 154px);
@@ -116,5 +120,11 @@ scrollbar-width: none;  /* Firefox */
   .clip div{
     width: 200px;
     height: 200px;
+  }
+  .search-span{
+    font-size: 16px;
+  }
+  .category-title, .movie-title{
+    font-size: 18px;
   }
 }
